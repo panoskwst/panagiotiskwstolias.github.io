@@ -38,7 +38,7 @@
 function checkCookie() {
   var user=getCookie("username");
   if (user != "") {
-    setCookie("first cookie");
+     setCookie("username", user, 30);
   } else {
      user = alert("Welcome to my portfolio " + user);
      if (user != "" && user != null) {
