@@ -36,15 +36,15 @@
 	}
 
 function checkCookie() {
-  var user=getCookie("username");
+  var user = getCookie("username");
   if (user != "") {
-     setCookie("username", user, 30);
+    setCookie("username", user, 30);
   } else {
-     user = alert("Welcome to my portfolio " + user);
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
+    alert("Welcome to my portfolio ");
+    user = old;
+    setCookie("username", user, 30);
   }
+}
 }
 </script>
 	</head>
