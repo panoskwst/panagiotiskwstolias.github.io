@@ -11,14 +11,45 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script>	
-		if(localStorage.getItem("firstTime")==null){
-  				 alert("First Time Alert");
-   				localStorage.setItem("firstTime","done");
-		}
-			</script>
+	<script>
+	function setCookie(cname,cvalue,exdays) {
+	  var d = new Date();
+	  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	  var expires = "expires=" + d.toGMTString();
+	  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+	function getCookie(cname) {
+	  var name = cname + "=";
+  	var decodedCookie = decodeURIComponent(document.cookie);
+  	var ca = decodedCookie.split(';');
+  	for(var i = 0; i < ca.length; i++) {
+    	var c = ca[i];
+    	while (c.charAt(0) == ' ') {
+      	c = c.substring(1);
+    	}
+    	if (c.indexOf(name) == 0) {
+      	return c.substring(name.length, c.length);
+    	}
+  }
+  	return "";
+	}
+
+function checkCookie() {
+  var user=getCookie("username");
+  if (user != "") {
+    
+  } else {
+     user = alert("Welcome to my portfolio " + user);
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}
+</script>
 	</head>
-	<body class="is-preload">
+	<body onload="checkCookie() class="is-preload">
+		
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
