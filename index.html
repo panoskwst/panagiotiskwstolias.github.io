@@ -54,15 +54,20 @@ function checkCookie() {
 }
 
 
-
-function checkCookie(user) {
-  var user = "";
+function getCookie(cname) {
+	  var name = cname +  Math.floor(Math.random()* 100000 );
+  	
+	
+	
+}
+function checkCookie("username"){
+  var user = "username");
    if (user != "") {
-   setCookie( user, 30);
+   setCookie( "username",user,30);
   } else {
     alert("Welcome to my portfolio ");
    user = old;
-    setCookie( user, 30);
+    setCookie( "username",user,30);
   }
 }
 }
